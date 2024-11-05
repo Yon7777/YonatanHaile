@@ -119,19 +119,20 @@ nav a:hover{
     
 }
 .full span{
+    opacity:0;
     animation: fadeInOut  ease-in-out infinite;
     position: absolute;
-    animation-duration:12s ;
-    animation-delay: -1s;
+    animation-duration:15s ;
+
 }
 .full span:nth-child(1){
     animation-delay: 0s;
 }
 .full span:nth-child(2){
-    animation-delay: 4s;
+    animation-delay: 5s;
 }
 .full span:nth-child(3){
-    animation-delay: 8s;
+    animation-delay: 10s;
 }
 
 
@@ -303,26 +304,31 @@ footer {
 }
 
 
-@keyframes fadeInOut {
-   0%{
-    opacity: 0;
-margin-top: -40px;
-   }
-   25%{
-    opacity: 0;
-   }
- 
-   50%{
-    opacity: 100%;
-margin-top: 0;
-   }
-   75%{
-    opacity: 0;
-   }
 
-  
-   100%{
-    opacity: 0;
-margin-top: 40px;
-   }
+@keyframes fadeInOut {
+    0% {
+        opacity: 0; 
+        transform: translateY(-50px); /* Use transform for smoother animations */
+        transition: 5s;
+    }
+    25%{
+opacity: 0;
+transition: 4s;
+    }
+    50% {
+        opacity: 1; 
+        transform: translateY(0); /* Fully visible and at original position */
+        transition: 4s;
+    }
+    75%{
+opacity: 0;
+transition: 4s;
+    }
+    
+    100% {
+        opacity: 0; 
+        transform: translateY(50px); /* Move down smoothly */
+        transition: 4s;
+    }
 }
+
